@@ -7,7 +7,7 @@ Web app that lets you simultaneously stream music across various devices through
 ### Install Required Python Modules
 
 ```bash
-pip install -r requirements.txt
+pip install -r reqs.txt
 ```
 ### Start Web Server
 
