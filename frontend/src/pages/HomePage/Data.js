@@ -4,7 +4,7 @@ export const homeObjOne = {
     lightTopLine: true, 
     lightTextDesc: true,
     buttonLabel: 'START LISTENING', 
-    description: "Jam sessions, socially distanced. Listen to music with others, whereever you are. No aux needed",
+    description: "Jam sessions, socially distanced. Listen to music with others, wherever you are. No aux needed",
     headline: "LISTEN TO SPOTIFY TOGETHER", 
     lightText: true,
      topline: '', 
