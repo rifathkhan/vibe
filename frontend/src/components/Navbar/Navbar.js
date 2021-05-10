@@ -9,8 +9,6 @@ import {
     NavIcon, 
     JugIcon, 
     NavMenu,
-    NavItem,
-    NavLinks,
     NavItemBtn,
     NavBtnLink,
 } from "./Navbar.elements";
@@ -52,22 +50,17 @@ const Navbar = () => {
                             {click ? <FaTimes /> : <FaBars />}
                         </JugIcon>
                         <NavMenu onClick={ handleClick } click={click}>
-                            <NavItem>
-                                <NavLinks to='/login'>
-                                    Login
-                                </NavLinks>
-                            </NavItem>
                             <NavItemBtn>
                                 {button ? (
-                                    <NavBtnLink to="/sign-up">
+                                    <NavBtnLink to="/auth">
                                         <Button primary>
-                                            SIGN UP
+                                            LOG IN
                                         </Button>
                                     </NavBtnLink>
                                 ) : (
-                                    <NavBtnLink to='/sign-up'>
+                                    <NavBtnLink to='/auth'>
                                         <Button fontBig primary>
-                                            SIGN UP
+                                            Login
                                         </Button>
                                     </NavBtnLink>
                                 )}
@@ -81,3 +74,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

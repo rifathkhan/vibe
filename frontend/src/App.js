@@ -3,20 +3,26 @@ import GlobalStyle from './globalStyles';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {  Navbar, Footer } from "./components";
 import  Home  from "./pages/HomePage/Home";
+import SignInSide from "./pages/Auth/authenticate";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
-      <GlobalStyle />
-      <ScrollToTop />
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-        </Switch>
-        <Footer/>
+      <GlobalStyle/>
+      <ScrollToTop/>
+      <Switch>
+        <Route exact path = '/'>
+          <Navbar/>
+          <Home/>
+          <Footer/>
+        </Route>
+        <Route>
+          <SignInSide/>
+        </Route>
+      </Switch>
     </Router>
-  );
+  )
 }
 
 export default App;
