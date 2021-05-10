@@ -5,6 +5,7 @@ app_name = 'frontend'
 
 urlpatterns = [
     path('', index, name=''),
+    path9'auth', index),
     path('info', index),
     path('join', index),
     path('create', index),

@@ -17,7 +17,7 @@ function App() {
           <Home/>
           <Footer/>
         </Route>
-        <Route>
+        <Route exact path = '/auth'>
           <SignInSide/>
         </Route>
       </Switch>
