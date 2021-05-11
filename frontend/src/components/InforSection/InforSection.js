@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Button, Container } from '../../globalStyles';
+import { Container } from '../../globalStyles';
 import { 
     InforSec, 
     InforRow, 
@@ -39,11 +38,6 @@ const InforSection = ({
                                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                                 <Heading lightText={lightText}>{headline}</Heading>
                                 <Subtitle lightTextDesc = {lightTextDesc}>{description}</Subtitle>
-                                <Link to='/login'>
-                                    <Button big fontBig primary={primary}>
-                                        {buttonLabel}
-                                    </Button>
-                                </Link>
                             </TextWrapper>
                         </InforColumn>
                         <InforColumn>

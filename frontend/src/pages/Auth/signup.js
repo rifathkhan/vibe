@@ -1,4 +1,6 @@
-import React from 'react';
+import React , { useCallback } from 'react';
+import { withRouter } from "react-router";
+import fire from "../../fire.js"
 import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -56,8 +58,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Signup() {
+const SignUp = ({ history }) => {
+
   const classes = useStyles();
+
+  const handleSignUp = useCallback(async event => {
+    event.preventDefault();
+    const { email, password } = event.target.elements;
+    try {
+      await fire
+        .auth()
+        .createUserWithEmailAndPassword(email.value, password.value);
+      history.push("/app");
+    } catch (error) {
+      alert(error);
+    }
+  }, [history]);
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -71,7 +87,7 @@ export default function Signup() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} onSubmit={handleSignUp}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -120,5 +136,7 @@ export default function Signup() {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default withRouter(SignUp);
 

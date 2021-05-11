@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
+import { withRouter, Redirect } from "react-router";
+import fire from '../../fire'
+import { AuthContext } from '../../auth'
 import Avatar from '@material-ui/core/Avatar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -10,6 +13,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button2 } from '../../globalStyles';
+
 
 function Copyright() {
   return (
@@ -56,8 +60,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LogIn() {
+const LogIn = ({ history }) => {
   const classes = useStyles();
+
+  const handleLogin = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await fire
+          .auth()
+          .signInWithEmailAndPassword(email.value, password.value);
+        history.push("/app");
+      } catch (error) {
+        alert(error);
+      }
+    },
+  [history]
+);
+
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -71,7 +97,7 @@ export default function LogIn() {
           <Typography component="h1" variant="h5">
             Log in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} onSubmit={handleLogin}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -122,3 +148,4 @@ export default function LogIn() {
   );
 }
 
+export default withRouter(LogIn);

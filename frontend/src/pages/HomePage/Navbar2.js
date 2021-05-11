@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes} from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
+import fire from '../../fire.js'
 import { 
     Nav, 
     NavbarContainer, 
@@ -11,13 +12,13 @@ import {
     NavMenu,
     NavItemBtn,
     NavBtnLink,
-} from "./Navbar.elements";
+} from "../../components/Navbar/Navbar.elements";
 
-const Navbar2 = () => {
+const LogOutBtn = () => {
 
     const [click, setClick] = useState(false);
-
-    const [button, setButton] = useState(false);
+    // eslint-disable-next-line
+    const [button, setButton] = useState(true);
 
     const handleClick = () => setClick(!click);
 
@@ -51,19 +52,11 @@ const Navbar2 = () => {
                         </JugIcon>
                         <NavMenu onClick={ handleClick } click={click}>
                             <NavItemBtn>
-                                {button ? (
-                                    <NavBtnLink to="/auth">
-                                        <Button primary>
-                                            LOG OUT
-                                        </Button>
-                                    </NavBtnLink>
-                                ) : (
-                                    <NavBtnLink to='/auth'>
-                                        <Button fontBig primary>
-                                            LOG OUT
-                                        </Button>
-                                    </NavBtnLink>
-                                )}
+                                <NavBtnLink to="/">
+                                    <Button primary onClick={() => fire.auth().signOut()}>
+                                        LOG OUT
+                                    </Button>
+                                </NavBtnLink>
                             </NavItemBtn>
                         </NavMenu>
                     </NavbarContainer>
@@ -73,4 +66,4 @@ const Navbar2 = () => {
     );
 };
 
-export default Navbar2;
+export default LogOutBtn;

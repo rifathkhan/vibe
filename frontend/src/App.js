@@ -4,25 +4,23 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home  from "./pages/HomePage/Home";
 import Home2 from "./pages/HomePage/Home2"
 import LogIn from "./pages/Auth/signin";
-import Signup from "./pages/Auth/signup";
+import SignUp from "./pages/Auth/signup";
+import { AuthProvider } from "./auth";
+import Private from "./private"
 
 function App() {
   return (
-    <Router>
-      <GlobalStyle/>
-        <Route exact path = '/'>
-          <Home/>
-        </Route>
-        <Route exact path = '/login'>
-          <LogIn/>
-        </Route>
-        <Route exact path = '/signup'>
-          <Signup/>
-        </Route>
-        <Route exact path = '/app'>
-          <Home2/>
-        </Route>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div>
+          <GlobalStyle/>
+            <Route exact path = '/' component ={Home} />
+            <Route exact path = '/login' component ={LogIn} />
+            <Route exact path = '/signup' component ={SignUp} />
+            <Private exact path = '/app' component ={Home2} />
+        </div>
+      </Router>
+    </AuthProvider>
   )
 }
 

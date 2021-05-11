@@ -1,7 +1,6 @@
 import React from 'react';
 import { homeObjOne, homeObjTwo, homeObjThree } from './Data';
 import { InforSection } from '../../components';
-import { InforSection2 } from '../../components';
 import { Navbar ,Footer} from '../../components'
 
 
@@ -11,8 +10,8 @@ const Home = () => {
         <>
            <Navbar/>
            <InforSection {...homeObjOne} />
-           <InforSection2 {...homeObjTwo} />
-           <InforSection2 {...homeObjThree} />
+           <InforSection {...homeObjTwo} />
+           <InforSection {...homeObjThree} />
            <Footer/>
         </>
     );

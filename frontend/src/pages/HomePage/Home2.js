@@ -2,16 +2,17 @@ import React from 'react';
 import { homeObjFour, homeObjTwo, homeObjThree } from './Data';
 import { InforSection } from '../../components';
 import { InforSection2 } from '../../components';
-import { Navbar ,Footer} from '../../components';
+import { Footer } from '../../components';
+import LogOutBtn from './Navbar2';
 
 
 const Home2 = () => {
     return (
         <>
-           <Navbar/>
-           <InforSection {...homeObjFour} />
-           <InforSection2 {...homeObjTwo} />
-           <InforSection2 {...homeObjThree} />
+           <LogOutBtn/>
+           <InforSection2 {...homeObjFour} />
+           <InforSection {...homeObjTwo} />
+           <InforSection {...homeObjThree} />
            <Footer/>
         </>
     );

@@ -1,7 +1,9 @@
-import firebase from 'firebase';
+import firebase from "firebase/app";
+import "firebase/analytics";
 import "firebase/auth";
+import "firebase/firestore";
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAW9WFYFgJmCgrI-rCdGxr3n_3YSB-ALyI",
     authDomain: "vibefm-99dd2.firebaseapp.com",
     projectId: "vibefm-99dd2",
