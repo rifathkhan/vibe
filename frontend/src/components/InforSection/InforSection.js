@@ -14,7 +14,7 @@ import {
 } from './InforSection.elements';
 
 
-const inforSection = ({
+const InforSection = ({
      lightBg, 
      imgStart, 
      lightTopLine, 
@@ -39,7 +39,7 @@ const inforSection = ({
                                 <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
                                 <Heading lightText={lightText}>{headline}</Heading>
                                 <Subtitle lightTextDesc = {lightTextDesc}>{description}</Subtitle>
-                                <Link to='/sign-up'>
+                                <Link to='/login'>
                                     <Button big fontBig primary={primary}>
                                         {buttonLabel}
                                     </Button>
@@ -58,4 +58,4 @@ const inforSection = ({
     );
 }
 
-export default inforSection;
+export default InforSection;

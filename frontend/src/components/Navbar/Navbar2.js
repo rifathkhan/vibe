@@ -13,7 +13,7 @@ import {
     NavBtnLink,
 } from "./Navbar.elements";
 
-const Navbar = () => {
+const Navbar2 = () => {
 
     const [click, setClick] = useState(false);
 
@@ -52,15 +52,15 @@ const Navbar = () => {
                         <NavMenu onClick={ handleClick } click={click}>
                             <NavItemBtn>
                                 {button ? (
-                                    <NavBtnLink to="/login">
+                                    <NavBtnLink to="/auth">
                                         <Button primary>
-                                            LOG IN
+                                            LOG OUT
                                         </Button>
                                     </NavBtnLink>
                                 ) : (
-                                    <NavBtnLink to='/login'>
+                                    <NavBtnLink to='/auth'>
                                         <Button fontBig primary>
-                                            LOG IN
+                                            LOG OUT
                                         </Button>
                                     </NavBtnLink>
                                 )}
@@ -73,5 +73,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
-
+export default Navbar2;

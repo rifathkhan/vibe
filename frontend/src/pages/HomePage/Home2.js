@@ -1,16 +1,15 @@
 import React from 'react';
-import { homeObjOne, homeObjTwo, homeObjThree } from './Data';
+import { homeObjFour, homeObjTwo, homeObjThree } from './Data';
 import { InforSection } from '../../components';
 import { InforSection2 } from '../../components';
-import { Navbar ,Footer} from '../../components'
+import { Navbar ,Footer} from '../../components';
 
 
-
-const Home = () => {
+const Home2 = () => {
     return (
         <>
            <Navbar/>
-           <InforSection {...homeObjOne} />
+           <InforSection {...homeObjFour} />
            <InforSection2 {...homeObjTwo} />
            <InforSection2 {...homeObjThree} />
            <Footer/>
@@ -18,4 +17,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Home2;

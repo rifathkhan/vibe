@@ -3,7 +3,7 @@ export const homeObjOne = {
     imgStart:'',
     lightTopLine: true, 
     lightTextDesc: true,
-    buttonLabel: 'START LISTENING', 
+    buttonLabel: 'GET STARTED', 
     description: "Jam sessions, socially distanced. Listen to music with others, wherever you are. No aux needed",
     headline: "LISTEN TO SPOTIFY TOGETHER", 
     lightText: true,
@@ -45,6 +45,22 @@ export const homeObjThree = {
      topline: '', 
      primary: false,
      img: require("../../images/svg-2.svg").default,
+     alt: 'Image',
+     start: ''
+};
+
+export const homeObjFour = {
+    lightBg: false, 
+    imgStart:'',
+    lightTopLine: true, 
+    lightTextDesc: true,
+    buttonLabel: 'START LISTENING', 
+    description: "Jam sessions, socially distanced. Listen to music with others, wherever you are. No aux needed",
+    headline: "LISTEN TO SPOTIFY TOGETHER", 
+    lightText: true,
+     topline: '', 
+     primary: true,
+     img: require("../../images/svg-3.svg").default,
      alt: 'Image',
      start: ''
 };

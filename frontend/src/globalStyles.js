@@ -46,5 +46,26 @@ font-family: 'Fjalla One', sans-serif;
 }
 `;
 
+export const Button2 = styled.button`
+border-radius: 4px;
+background: ${({primary}) => (primary ? '#4b59f7' : '#0467fb')};
+white-space: nowrap;
+padding: ${({big}) => (big ? '12px 64px' : '10px 120px')};
+color: #fff;
+font-size: ${({fontBig}) => (fontBig ? '20px' : '16px')};
+outline: none;
+border: none;
+cursor: pointer;
+font-family: 'Fjalla One', sans-serif;
+&:hover {
+  transition: all 0.3s ease-out;
+  background: #fff;
+  background: ${({primary}) => (primary ? '#0467fb' : '#4b59f7')}
+}
+@media screen and (max-width: 960px) {
+  width: 100%;
+}
+`;
+
 
 export default GlobalStyle;

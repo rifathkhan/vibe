@@ -1,26 +1,27 @@
 import React from "react";
 import GlobalStyle from './globalStyles';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {  Navbar, Footer } from "./components";
-import  Home  from "./pages/HomePage/Home";
-import SignInSide from "./pages/Auth/authenticate";
-import ScrollToTop from "./components/ScrollToTop";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home  from "./pages/HomePage/Home";
+import Home2 from "./pages/HomePage/Home2"
+import LogIn from "./pages/Auth/signin";
+import Signup from "./pages/Auth/signup";
 
 function App() {
   return (
     <Router>
       <GlobalStyle/>
-      <ScrollToTop/>
-      <Switch>
         <Route exact path = '/'>
-          <Navbar/>
           <Home/>
-          <Footer/>
         </Route>
-        <Route exact path = '/auth'>
-          <SignInSide/>
+        <Route exact path = '/login'>
+          <LogIn/>
         </Route>
-      </Switch>
+        <Route exact path = '/signup'>
+          <Signup/>
+        </Route>
+        <Route exact path = '/app'>
+          <Home2/>
+        </Route>
     </Router>
   )
 }

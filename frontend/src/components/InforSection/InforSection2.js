@@ -13,7 +13,7 @@ import {
 } from './InforSection.elements';
 
 
-const inforSection = ({
+const InforSection2 = ({
      lightBg, 
      imgStart, 
      lightTopLine, 
@@ -52,4 +52,4 @@ const inforSection = ({
     );
 }
 
-export default inforSection;
+export default InforSection2;
